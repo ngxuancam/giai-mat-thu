@@ -1,0 +1,12 @@
+node_modules/
+dist/
+e2e/.out/
+*.log
+
+.vercel
+.env*
+
+# mô hình AI tải lúc build (xem scripts/fetch-model.mjs)
+/models/
+.next/
+next-env.d.ts

@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+
+/**
+ * Hệ thiết kế "sổ tay dã ngoại".
+ *
+ * Mật thư là trò chơi của trại hướng đạo, nên giao diện mượn chất liệu của
+ * cuốn sổ ghi chép mang theo: giấy kẻ ô, mực đen ngả xanh, mộc đỏ đóng dấu,
+ * xanh lá hướng đạo. Ban đêm (giao diện tối) là "đêm lửa trại": nền rừng
+ * thẫm, chữ màu giấy cũ, đỏ ấm như than hồng.
+ *
+ * Các thành phần đọc token kiểu shadcn (`--color-primary`, `--color-card`…),
+ * nên đổi bảng màu ở đây là đổi toàn bộ giao diện.
+ */
+
+:root {
+  --paper: #f3ecdb;
+  --paper-2: #e9dfc6;
+  --sheet: #fbf7ec;
+  --ink: #1f2a28;
+  --ink-soft: #59625d;
+  --line: #d6c8a8;
+  --grid: rgba(31, 42, 40, 0.055);
+  --stamp: #b03a2b;
+  --stamp-ink: #fff8ee;
+  --scout: #3b5a38;
+  --khaki: #8a7647;
+  --margin-line: rgba(176, 58, 43, 0.35);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121613;
+    --paper-2: #171c18;
+    --sheet: #1b211c;
+    --ink: #ece4d0;
+    --ink-soft: #a6aa98;
+    --line: #2f3830;
+    --grid: rgba(236, 228, 208, 0.035);
+    --stamp: #e06a55;
+    --stamp-ink: #1c0f0b;
+    --scout: #93b583;
+    --khaki: #c9b27c;
+    --margin-line: rgba(224, 106, 85, 0.3);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--sheet);
+  --color-card-foreground: var(--ink);
+  --color-primary: var(--stamp);
+  --color-primary-foreground: var(--stamp-ink);
+  --color-secondary: var(--paper-2);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--paper-2);
+  --color-muted-foreground: var(--ink-soft);
+  --color-accent: var(--paper-2);
+  --color-destructive: var(--stamp);
+  --color-success: var(--scout);
+  --color-khaki: var(--khaki);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--stamp);
+
+  --radius: 10px;
+
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bitter), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, Consolas, monospace;
+  --font-hand: var(--font-patrick), var(--font-be-vietnam), cursive;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Giấy kẻ ô 24px — vẽ bằng gradient, không tải ảnh nào. */
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--stamp) 25%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--stamp);
+    outline-offset: 2px;
+  }
+
+  /* Số xếp thẳng cột, không nhảy khi đổi giá trị. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Trang giấy có lề đỏ — cho khung nhập OTT/bản mã. */
+  .giay-ke {
+    background-color: var(--sheet);
+    background-image: linear-gradient(90deg, transparent 2.25rem, var(--margin-line) 2.25rem, var(--margin-line) calc(2.25rem + 1px), transparent calc(2.25rem + 1px));
+  }
+
+  /* Đường khâu chỉ quanh thẻ, như mép bìa sổ. */
+  .duong-khau {
+    position: relative;
+  }
+  .duong-khau::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1.5px dashed color-mix(in srgb, var(--khaki) 55%, transparent);
+    border-radius: calc(var(--radius) - 4px);
+    pointer-events: none;
+  }
+
+  /* Mộc đỏ: viền kép, hơi nghiêng, chữ in hoa. */
+  .con-dau {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    border: 2px solid var(--stamp);
+    outline: 1px solid var(--stamp);
+    outline-offset: 2px;
+    border-radius: 6px;
+    color: var(--stamp);
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+  }
+
+  /* Băng dính giấy dán góc thẻ. */
+  .bang-dinh {
+    position: relative;
+  }
+  .bang-dinh::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 84px;
+    height: 20px;
+    translate: -50% 0;
+    rotate: -2deg;
+    background: color-mix(in srgb, var(--khaki) 30%, transparent);
+    border-left: 1px dashed color-mix(in srgb, var(--khaki) 50%, transparent);
+    border-right: 1px dashed color-mix(in srgb, var(--khaki) 50%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

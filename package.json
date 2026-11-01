@@ -1,0 +1,35 @@
+{
+  "name": "giai-mat-thu",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "test": "vitest run",
+    "eval": "node scripts/eval.js",
+    "e2e": "node e2e/smoke.cjs",
+    "start": "next start",
+    "model": "node scripts/fetch-model.mjs",
+    "prebuild": "node scripts/fetch-model.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.48.0",
+    "playwright": "^1.63.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3",
+    "vitest": "^5.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.5.1",
+    "next": "^16.4.3",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
