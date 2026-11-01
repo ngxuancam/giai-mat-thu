@@ -75,3 +75,7 @@ CSP có nonce theo từng yêu cầu, không tải tài nguyên bên ngoài; ph�
 chính trang.
 
 Tác giả: [Nguyễn Xuân Cảm](https://nguyenxuancam.com)
+
+## Giấy phép
+
+[Apache License 2.0](LICENSE) © 2026 Nguyễn Xuân Cảm
