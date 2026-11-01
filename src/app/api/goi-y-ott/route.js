@@ -1,6 +1,9 @@
 /**
  * POST /api/goi-y-ott  { ott }  →  { goiY: [{ id, ten, xacSuat, doTin }], moHinh }
  *
+ * Trả về xác suất của MỌI loại: trình duyệt còn lọc tiếp theo khuôn dạng bản mã
+ * (ui/locGoiYAi.js), nên cần cả những loại không nằm trong top đầu.
+ *
  * Chỉ chạy khi người dùng bấm "Hỏi AI về OTT" — việc giải mã vẫn hoàn toàn
  * trên trình duyệt. Thứ duy nhất gửi lên là câu OTT, và nó không được lưu.
  */
@@ -48,7 +51,7 @@ export async function POST(request) {
   if (ott.length > MAX_OTT) return loi(413, `OTT dài quá ${MAX_OTT} ký tự.`);
 
   try {
-    const goiY = await doanLoai(ott);
+    const goiY = await doanLoai(ott, Infinity);
     return Response.json({ goiY, moHinh: TEN_MO_HINH }, { headers: { 'Cache-Control': 'no-store' } });
   } catch (err) {
     console.error('[goi-y-ott]', err);

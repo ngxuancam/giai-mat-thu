@@ -9,7 +9,7 @@
 import { Sparkles, Loader2, Filter } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export function GoiYAi({ ott, ai, onHoi, onChiThu }) {
+export function GoiYAi({ ott, ai, loc, onHoi, onChiThu }) {
   const coOtt = ott.trim().length > 0;
   const dangHoi = ai?.dangHoi;
 
@@ -40,14 +40,16 @@ export function GoiYAi({ ott, ai, onHoi, onChiThu }) {
         </p>
       )}
 
-      {ai?.goiY && (
+      {loc && (
         <div className="mt-3 rounded-lg border border-border bg-background/60 p-3" aria-live="polite">
           <div className="mb-2 flex items-baseline justify-between gap-2">
-            <span className="font-hand text-base leading-none">AI đoán OTT này là…</span>
+            <span className="font-hand text-base leading-none">
+              {loc.chacChan ? 'AI đoán OTT này là…' : 'AI chưa chắc — có thể là…'}
+            </span>
             <span className="font-mono text-[10px] text-muted-foreground">{ai.moHinh?.split('/').pop()}</span>
           </div>
           <ul className="space-y-1.5">
-            {ai.goiY.map((g, i) => (
+            {loc.goiY.map((g, i) => (
               <li key={g.id} className="flex items-center gap-2 text-[13px]">
                 <span className={cn('w-40 shrink-0 truncate', i === 0 && 'font-semibold')}>{g.ten}</span>
                 <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-secondary">
@@ -72,7 +74,11 @@ export function GoiYAi({ ott, ai, onHoi, onChiThu }) {
             ))}
           </ul>
           <p className="mt-2 text-[11px] text-muted-foreground">
-            Gợi ý này đã được cộng vào điểm “Gợi ý OTT” của các lời giải. Bấm phễu để chỉ thử một loại.
+            {loc.soBiLoai > 0 && `Đã bỏ ${loc.soBiLoai} loại không hợp khuôn dạng bản mã. `}
+            {loc.chacChan
+              ? 'Gợi ý này đã được cộng vào điểm “Gợi ý OTT” của các lời giải.'
+              : 'OTT này không giống cách ra đề quen thuộc của loại nào, nên gợi ý không được tính vào điểm.'}{' '}
+            Bấm phễu để chỉ thử một loại.
           </p>
         </div>
       )}

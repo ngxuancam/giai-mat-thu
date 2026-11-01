@@ -1,5 +1,6 @@
 import { Be_Vietnam_Pro, Bitter, JetBrains_Mono, Patrick_Hand } from 'next/font/google';
 import { headers } from 'next/headers';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SiteHeader } from '@/ui/layout/SiteHeader';
 import { SiteFooter } from '@/ui/layout/SiteFooter';
 import { SITE } from '@/lib/site';
@@ -94,6 +95,8 @@ export default async function RootLayout({ children }) {
         <SiteHeader />
         <div id="noi-dung">{children}</div>
         <SiteFooter />
+        {/* Core Web Vitals của người dùng thật, gửi về /_vercel trên chính tên miền này. */}
+        <SpeedInsights />
       </body>
     </html>
   );

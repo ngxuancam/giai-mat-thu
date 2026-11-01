@@ -43,6 +43,7 @@ export const GOI_Y_OTT = {
   morseso: ['số lẻ là tè số chẵn là tích', 'N bằng mười hai', 'chẵn lẻ'],
   morseghep: ['ghép hai chữ Morse thành một', 'X bằng NA bằng TU', 'mã dài tách thành mã ngắn'],
   pheptinhchu: ['chữ trừ chữ', 'D trừ A bằng C', 'A cộng một', 'cộng trừ bảng chữ cái'],
+  chudunggiua: ['người đứng chính giữa', 'chữ ở giữa hai chữ', 'kẹp ở giữa', 'đứng giữa hai người'],
 };
 
 /**

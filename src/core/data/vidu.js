@@ -190,6 +190,14 @@ export const VI_DU = [
     dapAn: 'ANHNAMMAP',
     nguon: 'that',
   },
+  {
+    id: 'chudunggiua',
+    ten: 'Chữ đứng giữa',
+    ott: 'Tôi yêu người đứng chính giữa tôi',
+    banMa: 'SU, GI, NP, PN, MO, HF, TR - MO, GI, ZB, BZ, SU, TR - GI, BZ, HJ - LN, HJ, DF, FD, OM, GE - MO, ZB, LN - CA, BZ, VX, BD, TR',
+    dapAn: 'THOONGS NHAATS HAI MIEENF NAM BAWCS',
+    nguon: 'that',
+  },
 ];
 
 /**

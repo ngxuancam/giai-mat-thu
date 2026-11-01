@@ -23,6 +23,7 @@ import { TabBar } from '@/ui/components/TabBar';
 import { BulkImport } from '@/ui/components/BulkImport';
 import { ExamplePicker } from '@/ui/components/ExamplePicker';
 import { GoiYAi } from '@/ui/components/GoiYAi';
+import { locGoiYAi } from '@/ui/locGoiYAi';
 import { cn } from '@/lib/utils';
 import { load, save } from '@/lib/storage';
 
@@ -33,9 +34,15 @@ const newTab = (init = {}) => ({ id: ++seq, ott: '', banMa: '', result: null, ai
 // Tab đầu cố định id 1 để HTML dựng trên máy chủ và trên trình duyệt khớp nhau.
 const TAB_DAU = { id: 1, ott: '', banMa: '', result: null, ai: null };
 
-/** Bảng { id → độ tin } đưa vào bộ chấm điểm, từ danh sách AI trả về. */
-const bangDoTin = (ai) =>
-  ai?.goiY ? Object.fromEntries(ai.goiY.map((g) => [g.id, g.doTin])) : null;
+/**
+ * Bảng { id → độ tin } đưa vào bộ chấm điểm. Gợi ý được lọc theo khuôn dạng
+ * bản mã trước; nếu AI vẫn chưa chắc thì không đưa vào điểm.
+ */
+const bangDoTin = (ai, banMa) => {
+  if (!ai?.goiY) return null;
+  const { goiY, chacChan } = locGoiYAi(ai.goiY, banMa);
+  return chacChan ? Object.fromEntries(goiY.map((g) => [g.id, g.doTin])) : null;
+};
 
 export default function Solver() {
   const [tabs, setTabs] = useState([TAB_DAU]);
@@ -63,7 +70,7 @@ export default function Solver() {
     (id, ott, banMa, ai = null, chiLoai = selected) => {
       if (!banMa.trim()) return patch(id, { result: null });
       patch(id, { dangGiai: true });
-      chayGiai(id, ott, banMa, { chiLoai, bangChu, goiYAi: bangDoTin(ai) }, (moc) =>
+      chayGiai(id, ott, banMa, { chiLoai, bangChu, goiYAi: bangDoTin(ai, banMa) }, (moc) =>
         patch(id, { result: moc, dangGiai: !moc.xong })
       );
     },
@@ -285,6 +292,7 @@ export default function Solver() {
                 <GoiYAi
                   ott={tab.ott}
                   ai={aiHienTai}
+                  loc={aiHienTai?.goiY ? locGoiYAi(aiHienTai.goiY, tab.banMa) : null}
                   onHoi={() => hoiAi(tab)}
                   onChiThu={(id) => {
                     setSelected([id]);

@@ -250,4 +250,51 @@ const phepTinhChu = {
   },
 };
 
-export const ciphers = { batTaVet, thuTuDaySo, morseSo, morseGhep, phepTinhChu };
+/* ── Chữ đứng giữa ── */
+
+/**
+ * Mỗi cặp hai chữ kẹp một chữ ở giữa trên vòng bảng chữ cái: "SU" → T,
+ * "NP" và "PN" → O, "ZB" → A (vòng qua Z về A). OTT kiểu "Tôi yêu người
+ * đứng chính giữa tôi".
+ */
+const viTri = (c) => c.charCodeAt(0) - 65;
+
+/** Chữ nằm giữa hai chữ theo cung ngắn hơn của vòng 26 chữ; null nếu không có chữ giữa duy nhất. */
+function chuGiua(cap) {
+  const [a, b] = [viTri(cap[0]), viTri(cap[1])];
+  const xuoi = (b - a + 26) % 26;
+  const kc = Math.min(xuoi, 26 - xuoi);
+  if (kc < 2 || kc % 2) return null;
+  const buoc = xuoi === kc ? kc / 2 : -kc / 2;
+  return AZ[(a + buoc + 26) % 26];
+}
+
+const chuDungGiua = {
+  id: 'chudunggiua',
+  name: 'Chữ đứng giữa',
+  family: 'thaythe',
+  moTa: 'Bản mã gồm các cặp hai chữ; chữ bạch văn là chữ đứng chính giữa hai chữ đó trong bảng chữ cái (vòng qua Z về A).',
+  tuKhoaOTT: ['dung giua', 'chinh giua', 'o giua', 'nguoi dung giua', 'trung tam'],
+
+  dauHieu: (ct) => {
+    const cap = ct.split(/[\s,.;\-/|]+/).filter(Boolean);
+    return cap.length >= 4 && cap.every((c) => /^[A-Z]{2}$/.test(c) && chuGiua(c)) ? 1 : 0;
+  },
+
+  khaThi: (ct) => {
+    const cap = ct.split(/[\s,.;\-/|]+/).filter(Boolean);
+    return cap.length >= 4 && cap.every((c) => /^[A-Z]{2}$/.test(c)) && cap.filter(chuGiua).length >= cap.length * 0.8;
+  },
+
+  *bienThe(ct) {
+    // "-" hoặc ";" ngăn từ; dấu phẩy, khoảng trắng ngăn cặp.
+    const bv = ct
+      .split(/\s*[-;/|]\s*/)
+      .map((tu) => tu.split(/[\s,.]+/).filter(Boolean).map((c) => chuGiua(c) ?? '?').join(''))
+      .join(' ')
+      .trim();
+    if (bv) yield { nhan: 'chữ ở giữa', bv, cach: 'Với mỗi cặp chữ, lấy chữ đứng chính giữa chúng trong bảng chữ cái (vòng qua Z về A).' };
+  },
+};
+
+export const ciphers = { batTaVet, thuTuDaySo, morseSo, morseGhep, phepTinhChu, chuDungGiua };
