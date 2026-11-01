@@ -118,9 +118,11 @@ export const diemNguGram = chiSoNguGram;
 
 /** 4. OTT có chứa từ khoá gợi ý loại mật thư này không. */
 export function diemOTT(ott, cipher) {
-  if (!ott || !cipher.tuKhoaOTT?.length) return 0;
+  if (!ott) return 0;
+  // Loại có khoá đặc trưng (vd. dãy số hoán vị) tự nhận ra OTT của mình.
+  let manh = cipher.khopOtt ? cipher.khopOtt(ott) : 0;
+  if (!cipher.tuKhoaOTT?.length) return manh;
   const o = boDau(ott.toLowerCase());
-  let manh = 0;
   for (const kw of cipher.tuKhoaOTT) {
     if (o.includes(kw)) manh = Math.max(manh, kw.includes(' ') ? 1 : 0.7);
   }

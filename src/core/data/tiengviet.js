@@ -24,7 +24,7 @@ export const VAN = new Set([
 
 /**
  * Từ vựng tiếng Việt phổ biến (không dấu), tập trung vào vốn từ hay xuất hiện
- * trong mật thư hướng đạo: mệnh lệnh, phương hướng, địa điểm, sinh hoạt trại.
+ * trong mật thư Đoàn – Đội: mệnh lệnh, phương hướng, địa điểm, sinh hoạt trại.
  * Danh sách cố ý gọn để giữ bundle nhẹ; điểm số vẫn phân biệt tốt vì bạch văn
  * sai thường không khớp được từ nào.
  *

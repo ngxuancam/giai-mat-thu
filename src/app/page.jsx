@@ -54,7 +54,7 @@ export default function TrangChu() {
       <div className="mx-auto max-w-[1320px] px-4 pb-2 pt-8 md:pt-12">
         <p className="font-hand text-xl text-primary">Sổ tay trại · trò chơi lớn</p>
         <h1 className="mt-1 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-          Giải mật thư hướng đạo trong một lần dán.
+          Giải mật thư Đoàn – Đội trong một lần dán.
         </h1>
         <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
           Dán OTT và bản mã, công cụ thử {CIPHERS.length} quy luật — Morse, Semaphore, Cam Ranh, Khánh Hoà,

@@ -5,7 +5,7 @@
  * được test tự động (vidu.test.js) nên không thể lệch với thuật toán: nếu ai
  * sửa thuật toán mà ví dụ không còn ra đúng đáp án, test sẽ báo ngay.
  *
- * `nguon: 'that'` = lấy từ tài liệu hướng đạo có đáp án sẵn.
+ * `nguon: 'that'` = lấy từ tài liệu sinh hoạt Đoàn – Đội có đáp án sẵn.
  * `nguon: 'dung'` = tự dựng bằng chính thuật toán, để minh hoạ khuôn dạng.
  */
 
@@ -148,6 +148,47 @@ export const VI_DU = [
     banMa: 'DEN NGAY MAI ANH HAY',
     dapAn: 'DNMAH',
     nguon: 'dung',
+  },
+  // ── Các dạng hay gặp trong sinh hoạt Đoàn – Đội ──
+  {
+    id: 'battavet',
+    ten: 'Bắt tà vẹt',
+    ott: 'Bắt tà vẹt',
+    banMa: 'KOW-HON-ONG-OHF-NIN-GEG-DEH-DME-UXC-OMH-WOU-COW-JIA-LTB-ARA-MUN-FOJ',
+    dapAn: 'KHOONGDDUOWCJLAMFOONHIEEMXMOOITRUOWNGFNGHECHUWABANJ',
+    nguon: 'that',
+  },
+  {
+    id: 'morseso',
+    ten: 'Morse số chẵn lẻ (N=12)',
+    ott: 'N=12',
+    banMa: '124606800302340460268001240461012011203645',
+    dapAn: 'BI TRIS DUNGX',
+    nguon: 'that',
+  },
+  {
+    id: 'morseghep',
+    ten: 'Morse ghép (X = NA = TU)',
+    ott: 'X = NA = TU',
+    banMa: 'II . TM . MT . EE . EO - ES . EE . E . E . IT . IE',
+    dapAn: 'HOOIJ HIEEUS',
+    nguon: 'that',
+  },
+  {
+    id: 'pheptinhchu',
+    ten: 'Chữ trừ chữ (D − A = C)',
+    ott: 'D - A = C, R - M = E',
+    banMa: 'Z - M, K - J, O - N, Y - E, T - J ; W - C, J - B, Z - E, Y - B',
+    dapAn: 'MAATJ THUW',
+    nguon: 'that',
+  },
+  {
+    id: 'thutudayso',
+    ten: 'Thứ tự theo dãy số',
+    ott: '13579 8642',
+    banMa: 'AHAMPAMNN',
+    dapAn: 'ANHNAMMAP',
+    nguon: 'that',
   },
 ];
 

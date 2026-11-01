@@ -138,7 +138,7 @@ const soThayChu = {
     const so = ct.match(/\d+/g);
     if (!so) return;
 
-    // Gốc 1: 1=A (phổ biến nhất trong mật thư hướng đạo).
+    // Gốc 1: 1=A (phổ biến nhất trong mật thư Đoàn – Đội).
     yield {
       nhan: '1=A',
       bv: so.map((n) => AZ[(+n - 1 + 26) % 26] ?? '?').join(''),

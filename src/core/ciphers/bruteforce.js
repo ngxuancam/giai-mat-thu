@@ -1,7 +1,7 @@
 /**
  * DÒ KHOÁ — giải những mật thư Việt Nam khi OTT không cho ra khoá dùng được.
  *
- * Phạm vi file này chỉ gồm các loại CÓ THẬT trong mật thư hướng đạo / GĐPT
+ * Phạm vi file này chỉ gồm các loại CÓ THẬT trong mật thư sinh hoạt Đoàn – Đội / GĐPT
  * Việt Nam. Không đưa vào đây những hệ mã phương Tây (Vigenère, thay thế đơn
  * bảng dò bảng, Playfair…): chúng không nằm trong truyền thống mật thư Việt
  * Nam, có thêm cũng chỉ sinh lời giải rác làm nhiễu bảng xếp hạng.

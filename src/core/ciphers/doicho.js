@@ -83,7 +83,7 @@ const duongRao = {
   name: 'Đường rào',
   family: 'doicho',
   moTa: 'Chữ cái viết theo hình răng cưa lên xuống trên nhiều dòng, đọc ra theo từng dòng.',
-  tuKhoaOTT: ['duong rao', 'rang cua', 'zigzag', 'len xuong', 'song nui', 'nhap nho'],
+  tuKhoaOTT: ['duong rao', 'rang cua', 'zigzag', 'len xuong', 'song nui', 'nhap nho', 'duong ray', 'dat ray', 'chat doi', 'thanh sat'],
 
   khaThi: (ct) => ct.replace(/[^A-Z0-9]/g, '').length >= 4,
 
@@ -146,7 +146,7 @@ const camRanh = {
   tuKhoaOTT: ['cam ranh', 'khoa', 'chia cot', 'ho chi minh', 'hoa binh', 'tuyen ngon'],
 
   /**
-   * Điểm nhận dạng Cam Ranh (theo tài liệu hướng đạo):
+   * Điểm nhận dạng Cam Ranh (theo tài liệu sinh hoạt Đoàn – Đội):
    *   - bản mã chia thành các cụm rời rạc, số ký tự mỗi cụm bằng nhau
    *   - nếu lệch thì chỉ lệch 1 ký tự
    *   - số chữ của khoá bằng số cụm

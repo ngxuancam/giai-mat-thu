@@ -7,7 +7,7 @@ import { SITE } from '@/lib/site';
 
 export const metadata = {
   title: 'Các loại mật thư và cách giải',
-  description: `Hướng dẫn ${CIPHERS.length} loại mật thư hướng đạo: thay thế, toạ độ, đổi chỗ — nguyên lý, dấu hiệu nhận biết qua OTT và ví dụ có lời giải từng bước.`,
+  description: `Hướng dẫn ${CIPHERS.length} loại mật thư cơ bản trong kỹ năng Đoàn – Đội: thay thế, toạ độ, đổi chỗ — nguyên lý, dấu hiệu nhận biết qua OTT và ví dụ có lời giải từng bước.`,
   alternates: { canonical: '/mat-thu' },
 };
 

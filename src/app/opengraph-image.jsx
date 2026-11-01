@@ -9,11 +9,11 @@
 import { ImageResponse } from 'next/og';
 import { CIPHERS } from '@/core/registry';
 
-export const alt = 'Giải Mật Thư — công cụ giải mật thư hướng đạo tiếng Việt';
+export const alt = 'Giải Mật Thư — tham khảo cách giải mật thư cơ bản trong kỹ năng Đoàn – Đội';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-const TIEU_DE = 'Giải mật thư hướng đạo trong một lần dán.';
+const TIEU_DE = 'Giải mật thư Đoàn – Đội trong một lần dán.';
 const PHU = `${CIPHERS.length} quy luật · chạy trên trình duyệt · AI đọc OTT`;
 const MORSE = '−−· ·· ·− ·· / −− ·− − / − ···· ··−';
 

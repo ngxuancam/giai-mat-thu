@@ -13,7 +13,7 @@ export const ALPHABET_EN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 /**
  * Bảng chữ cái tiếng Việt 29 chữ (có Ă Â Đ Ê Ô Ơ Ư, không có F J W Z).
- * Một số mật thư hướng đạo đánh số theo bảng này thay vì A–Z.
+ * Một số mật thư đánh số theo bảng này thay vì A–Z.
  */
 export const ALPHABET_VN = [
   'A', 'Ă', 'Â', 'B', 'C', 'D', 'Đ', 'E', 'Ê', 'G', 'H', 'I', 'K', 'L', 'M',

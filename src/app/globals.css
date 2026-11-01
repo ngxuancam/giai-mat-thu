@@ -3,9 +3,9 @@
 /**
  * Hệ thiết kế "sổ tay dã ngoại".
  *
- * Mật thư là trò chơi của trại hướng đạo, nên giao diện mượn chất liệu của
+ * Mật thư là trò chơi của các buổi cắm trại Đoàn – Đội, nên giao diện mượn chất liệu của
  * cuốn sổ ghi chép mang theo: giấy kẻ ô, mực đen ngả xanh, mộc đỏ đóng dấu,
- * xanh lá hướng đạo. Ban đêm (giao diện tối) là "đêm lửa trại": nền rừng
+ * xanh lá cắm trại. Ban đêm (giao diện tối) là "đêm lửa trại": nền rừng
  * thẫm, chữ màu giấy cũ, đỏ ấm như than hồng.
  *
  * Các thành phần đọc token kiểu shadcn (`--color-primary`, `--color-card`…),

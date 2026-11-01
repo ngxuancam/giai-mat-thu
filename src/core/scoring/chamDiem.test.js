@@ -16,7 +16,7 @@ describe('chamDiem — phân biệt tiếng Việt với chuỗi rác', () => {
     expect(dung).toBeGreaterThan(lech);
   });
 
-  it('cho điểm cao với mệnh lệnh hướng đạo điển hình', () => {
+  it('cho điểm cao với mệnh lệnh mật thư điển hình', () => {
     expect(diem('TAP HOP TAI SAN TRUONG')).toBeGreaterThan(55);
   });
 

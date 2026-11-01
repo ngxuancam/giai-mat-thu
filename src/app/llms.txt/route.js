@@ -14,7 +14,7 @@ export function GET() {
     '',
     `> ${SITE.moTa}`,
     '',
-    'Công cụ miễn phí giải mật thư trong sinh hoạt hướng đạo / thanh niên Việt Nam. Người dùng dán OTT (câu gợi ý) và bản mã; ',
+    'Công cụ miễn phí tham khảo cách giải các loại mật thư cơ bản trong kỹ năng Đoàn – Đội (sinh hoạt Đoàn TNCS, Đội TNTP). Người dùng dán OTT (câu gợi ý) và bản mã; ',
     `bộ giải thử ${CIPHERS.length} quy luật ngay trên trình duyệt, chấm điểm bằng mô hình n-gram tiếng Việt và xếp hạng lời giải. `,
     'Một mô hình nhúng câu nhỏ (multilingual-e5-small) chạy trên máy chủ có thể đoán loại mật thư từ nghĩa của OTT khi người dùng yêu cầu.',
     '',

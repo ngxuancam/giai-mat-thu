@@ -43,7 +43,8 @@ export const metadata = {
   authors: [{ name: SITE.tacGia.ten, url: SITE.tacGia.url }],
   keywords: [
     'giải mật thư',
-    'mật thư hướng đạo',
+    'kỹ năng Đoàn Đội',
+    'mật thư Đoàn Đội',
     'mật thư Morse',
     'mật thư Cam Ranh',
     'mật thư Khánh Hoà',
