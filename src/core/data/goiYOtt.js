@@ -16,7 +16,7 @@ import { VI_DU, LOAI_GIAI } from './vidu.js';
 
 export const GOI_Y_OTT = {
   morse: ['tích te tích te', 'dài ngắn ngắn dài', 'chấm và gạch', 'tiếng điện tín', 'tít tè tít tè', 'chim bay tiếng kêu'],
-  caesar: ['dời chữ đi vài bước', 'chữ này thay chữ kia cách đều', 'A thành D', 'dịch bảng chữ cái', 'Anh cả đi chăn dê', 'Bò con bằng tuổi dê', 'Leo thang cũng như đang ca'],
+  caesar: ['dời chữ đi vài bước', 'chữ này thay chữ kia cách đều', 'A thành D', 'dịch bảng chữ cái', 'Anh cả đi chăn dê', 'Bò con bằng tuổi dê', 'Leo thang cũng như đang ca', 'Trẻ em như búp trên cành', 'chữ này như chữ kia'],
   atbash: ['soi gương', 'đầu thành cuối, cuối thành đầu bảng chữ', 'A đổi Z', 'lật ngược bảng chữ cái'],
   sothaychu: ['số thứ tự của chữ cái', 'A là một B là hai', 'đếm chữ theo số', 'con số thay lời', 'Bê con bốn cẳng một què', 'Em lên năm', 'Dê mà đi hai chân', 'một phần ít ỏi'],
   sothaychuvn: ['bảng chữ cái tiếng Việt', '29 chữ cái', 'có cả Ă Â Đ Ê Ô Ơ Ư', 'chữ Việt đánh số'],

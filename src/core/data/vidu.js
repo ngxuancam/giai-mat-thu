@@ -198,6 +198,15 @@ export const VI_DU = [
     dapAn: 'THOONGS NHAATS HAI MIEENF NAM BAWCS',
     nguon: 'that',
   },
+  {
+    id: 'caesar',
+    ten: 'Thay thế dịch chuyển (Trẻ em như búp)',
+    // "Trẻ em NHƯ búp" → T như B. Lời giải: dịch 19 trên bảng EN 26.
+    ott: 'TRẺ EM NHƯ BÚP TRÊN CÀNH',
+    banMa: 'AOPOSCJHWTVAAOHUOWOVKHUHUN',
+    dapAn: 'THIHLVCAPMOTTHANHPHODANANG',
+    nguon: 'that',
+  },
 ];
 
 /**

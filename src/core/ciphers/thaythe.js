@@ -77,6 +77,17 @@ const caesar = {
   moTa: 'Mỗi chữ cái lùi hoặc tiến một số bước cố định trên bảng chữ cái.',
   tuKhoaOTT: ['tien chu', 'lui chu', 'dich chu', 'a thanh', 'chu bang chu'],
 
+  /**
+   * Khoá dạng "X như Y": "TRẺ EM NHƯ BÚP TRÊN CÀNH" nghĩa là T ứng với B. Người
+   * ra đề quy ước lệch nhau một bước khi đếm, nên khoá chỉ báo đây là loại
+   * dịch chuyển; bước dịch cụ thể để mô hình tiếng Việt chọn. Dạng "A = N"
+   * (hai chữ cái) cũng tính; "A = 1" (chữ = số) là số thay chữ, không phải loại này.
+   */
+  khopOtt: (ott) => {
+    const o = boDau(ott.toUpperCase());
+    return /\b[A-Z]+\s+NHU\s+[A-Z]+/.test(o) || /\b[A-Z]\s*=\s*[A-Z]\b/.test(o) ? 1 : 0;
+  },
+
   khaThi: (ct) => /[A-Z]/.test(ct),
 
   *bienThe(ct, { bangChu } = {}) {
