@@ -327,15 +327,25 @@ const soHoc = {
     const so = (ct.match(/\d+/g) || []).map(Number);
     if (!so.length) return;
 
-    // Hằng số ưu tiên lấy từ OTT; nếu không có thì thử 1..9.
-    const tuOtt = (ott.match(/\d+/g) || []).map(Number).filter((n) => n < 26);
-    const ds = tuOtt.length ? tuOtt : [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    /*
+     * Hằng số lấy từ OTT trước, rồi vẫn thử đủ 1..25. Số trong OTT thường là
+     * khoá gián tiếp chứ không phải chính bước cộng/trừ: "Em năm nay 16 tuổi"
+     * nghĩa là M = 16, tức trừ 3 — chỉ thử 16 thì không bao giờ ra.
+     */
+    const tuOtt = (ott.match(/\d+/g) || []).map(Number).filter((n) => n > 0 && n < 26);
+    const ds = [...new Set([...tuOtt, ...Array.from({ length: 25 }, (_, i) => i + 1)])];
+
+    // Giữ ranh giới từ ("//", "/", ";", " - ") để bạch văn đọc được thành từng từ.
+    const tuSo = ct
+      .split(/\s*(?:\/+|;|\s-\s)\s*/)
+      .map((t) => (t.match(/\d+/g) || []).map(Number))
+      .filter((t) => t.length);
 
     for (const k of ds) {
       for (const [ten, dau] of [['trừ', -1], ['cộng', 1]]) {
         yield {
           nhan: `${ten} ${k}`,
-          bv: so.map((n) => AZ[((n + dau * k - 1) % 26 + 26) % 26] ?? '?').join(''),
+          bv: tuSo.map((t) => t.map((n) => AZ[((n + dau * k - 1) % 26 + 26) % 26] ?? '?').join('')).join(' '),
           cach: `${ten === 'trừ' ? 'Trừ' : 'Cộng'} ${k} vào mỗi số rồi đổi sang chữ (1=A).`,
         };
       }

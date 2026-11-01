@@ -1,19 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { VI_DU } from './vidu.js';
+import { VI_DU, LOAI_GIAI } from './vidu.js';
 import { giaiMa } from '../giaiMa.js';
 import { CIPHERS } from '../registry.js';
 
-// Ví dụ GĐPT thuộc loại mới (id trong vidu.js) nhưng giải bằng cipher lõi đã có:
-// taynam/senvang dùng chuyển vị, songchet/bosan dùng họ ẩn dấu mở rộng.
-const AN_DAU_MO_RONG = {
-  taynam: ['taynam'],
-  senvang: ['camranh'],
-  songchet: ['andau'],
-  bosan: ['andau'],
-  docnguocgdpt: ['docnguoc'],
-  andausauhe: ['andau'],
-};
-const chiLoaiCua = (id) => AN_DAU_MO_RONG[id] ?? [id];
+// Ví dụ mang tên riêng nhưng giải bằng cipher lõi đã có — bảng dùng chung ở vidu.js.
+const chiLoaiCua = (id) => LOAI_GIAI[id] ?? [id];
 
 describe('thư viện ví dụ', () => {
   it('mỗi ví dụ trỏ tới một loại mật thư có thật', () => {

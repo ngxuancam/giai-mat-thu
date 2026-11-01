@@ -207,6 +207,24 @@ export const VI_DU = [
     dapAn: 'THIHLVCAPMOTTHANHPHODANANG',
     nguon: 'that',
   },
+  // Đề sưu tầm từ bình luận sotayhuongdao.com/giaimatthu (xem data/de-suu-tam.json)
+  {
+    id: 'bonganba',
+    ten: 'Dịch chữ (Con bò đứng giữa ngã ba)',
+    ott: 'Con bò đứng giữa ngã ba',
+    banMa: 'ZGA/LJSA/LJMQWF/LZGFY/NMFY/TMGU/LMGFY/DSA',
+    dapAn: 'HOI TRAI TRUYEN THONG VUNG BUOC TUONG LAI',
+    nguon: 'that',
+  },
+  {
+    id: 'sohoc',
+    ten: 'Số học (Em năm nay 16 tuổi)',
+    // "Em" = M = 16, nên mỗi số trừ 3 rồi đổi sang chữ (1=A).
+    ott: 'Em năm nay 16 tuổi',
+    banMa: '23,12,8,8,19,22//5,24,18,26,6,22//15,8,8,17//7,7,4,17,10,9',
+    dapAn: 'TIEEPS BUOWCS LEEN DDANGF',
+    nguon: 'that',
+  },
 ];
 
 /**
@@ -221,4 +239,5 @@ export const LOAI_GIAI = {
   bosan: ['andau'],
   docnguocgdpt: ['docnguoc'],
   andausauhe: ['andau'],
+  bonganba: ['caesar'],
 };

@@ -16,14 +16,14 @@ import { VI_DU, LOAI_GIAI } from './vidu.js';
 
 export const GOI_Y_OTT = {
   morse: ['tích te tích te', 'dài ngắn ngắn dài', 'chấm và gạch', 'tiếng điện tín', 'tít tè tít tè', 'chim bay tiếng kêu'],
-  caesar: ['dời chữ đi vài bước', 'chữ này thay chữ kia cách đều', 'A thành D', 'dịch bảng chữ cái', 'Anh cả đi chăn dê', 'Bò con bằng tuổi dê', 'Leo thang cũng như đang ca', 'Trẻ em như búp trên cành', 'chữ này như chữ kia'],
+  caesar: ['dời chữ đi vài bước', 'chữ này thay chữ kia cách đều', 'A thành D', 'dịch bảng chữ cái', 'Anh cả đi chăn dê', 'Bò con bằng tuổi dê', 'Leo thang cũng như đang ca', 'Trẻ em như búp trên cành', 'chữ này như chữ kia', 'Con bò đứng giữa ngã ba'],
   atbash: ['soi gương', 'đầu thành cuối, cuối thành đầu bảng chữ', 'A đổi Z', 'lật ngược bảng chữ cái'],
   sothaychu: ['số thứ tự của chữ cái', 'A là một B là hai', 'đếm chữ theo số', 'con số thay lời', 'Bê con bốn cẳng một què', 'Em lên năm', 'Dê mà đi hai chân', 'một phần ít ỏi'],
   sothaychuvn: ['bảng chữ cái tiếng Việt', '29 chữ cái', 'có cả Ă Â Đ Ê Ô Ơ Ư', 'chữ Việt đánh số'],
   phimnokia: ['điện thoại di động', 'nhắn tin', 'bàn phím số', 'bấm phím', 'alô', 'gọi điện'],
   semaphore: ['hai lá cờ', 'phất cờ', 'cờ tay', 'đánh tín hiệu bằng tay', 'góc của cánh tay'],
   tienchu: ['tiến lên vài bước', 'lùi lại', 'bước tới', 'đếm bước mà đi', 'dãy số bước'],
-  sohoc: ['cộng thêm', 'trừ bớt', 'phép tính', 'làm toán', 'thêm vào bớt ra'],
+  sohoc: ['cộng thêm', 'trừ bớt', 'phép tính', 'làm toán', 'thêm vào bớt ra', 'Em năm nay 16 tuổi', 'chữ cái bằng một con số'],
   andau: ['chữ đầu mỗi từ', 'người đứng đầu', 'đầu dòng', 'mở đầu', 'chữ cái đầu tiên', 'đứng đầu hàng'],
   khanhhoa: ['Khánh Hoà', 'Nha Trang', 'biển Nha Trang', 'hai dòng chữ đối nhau'],
   polybius: ['hàng trước cột sau', 'toạ độ ô vuông', 'bàn cờ', 'ô số hàng và cột', 'lưới năm nhân năm'],

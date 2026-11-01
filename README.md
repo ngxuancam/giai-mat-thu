@@ -47,6 +47,13 @@ chính bộ giải, nên lời giải trên trang không thể lệch với thu�
 - **Kiểm chứng.** Mỗi ví dụ trong `src/core/data/vidu.js` có đáp án và được test tự động; `npm run eval`
   in báo cáo xếp hạng trên toàn bộ thư viện ví dụ (hiện 22/22 đúng ở hạng nhất).
 
+## Đề sưu tầm
+
+`data/de-suu-tam.json` gom các đề có OTT và bản mã từ phần bình luận công khai của
+[sotayhuongdao.com/giaimatthu](https://sotayhuongdao.com/giaimatthu/), kèm trạng thái: đã kiểm chứng
+(đưa vào thư viện ví dụ), đáp án do người bình luận đoán, hay chưa ai giải. Các đề chưa giải là
+danh sách việc cần làm — ai biết cách giải cứ mở PR.
+
 ## Đóng góp một loại mật thư
 
 1. Viết module theo giao diện `Cipher` trong `src/core/types.js` (`khaThi`, `bienThe`, tuỳ chọn
